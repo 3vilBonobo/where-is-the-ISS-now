@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Animated web page that shows the current position of the International Space Station"
+    />
+    <!-- Fav-icon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon-16x16.png"
+    />
+    <!-- CSS & Fonts -->
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Exo:wght@400;500;600&display=swap""
+    rel="stylesheet" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin="anonymous"
+    />
+    <!-- Scripts -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      crossorigin="anonymous"
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+      defer
+    ></script>
+    <script type="text/javascript" src="./JS/app.js" defer></script>
+    <script type="text/javascript" src="./JS/particles.min.js" defer></script>
+    <script type="text/javascript" src="./JS/particlesJS.js" defer></script>
+    <title>Where is the International Space Station?</title>
+  </head>
+  <body>
+    <div class="particles-container" id="particles-js">
+      <header>
+        <h1 class="logo">
+          Where is the <br />
+          <a
+            href="https://www.nasa.gov/mission_pages/station/main/index.html"
+            target="_blank"
+            rel="noopener  noreferrer"
+            ><span>International Space Station</span></a
+          >
+          now?
+        </h1>
+        <nav>
+          <ul>
+            <li>
+              <a
+                href="https://www.nasa.gov/mission_pages/station/main/index.html"
+                target="_blank"
+                rel="noopener  noreferrer"
+                >ABOUT ISS</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/International_Space_Station/Where_is_the_International_Space_Station"
+                target="_blank"
+                rel="noopener  noreferrer"
+                >OFFICIAL ISS TRACKER</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <div role="main" class="main">
+        <div class="container">
+          <div id="map" class="map"></div>
+          <div class="info-container">
+            <h2>ISS Information</h2>
+            <ul class="info-list">
+              <li class="info">Latitude: <span id="latitude"></span></li>
+              <li class="info">Longitude: <span id="longitude"></span></li>
+              <li class="info">Altitude: <span id="altitude"></span></li>
+              <li class="info">Velocity: <span id="velocity"></span></li>
+              <li class="info">Visibility: <span id="visibility"></span></li>
+            </ul>
+            <div class="center">
+              <button class="btn">
+                <svg
+                  id="svg-btn"
+                  width="180px"
+                  height="50px"
+                  viewBox="0 0 180 50"
+                  class="border"
+                >
+                  <polyline
+                    points="179,1 179,59 1,59 1,1 179,1"
+                    class="bg-line"
+                  />
+                  <polyline
+                    points="179,1 179,59 1,59 1,1 179,1"
+                    class="hl-line"
+                  />
+                </svg>
+                <span>REFRESH</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <svg
+        viewBox="0 0 1749 1241"
+        xmlns="http://www.w3.org/2000/svg"
+        xml:space="preserve"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        stroke-linejoin="round"
+        stroke-miterlimit="2"
+      >
+        <path
+          id="star"
+          d="m530 565 118-91-113 96c-2 3-2 2-6 3-3 0-5-2-3-4 2-3 0-2 4-4Z"
+          fill="#fff"
+        />
+      </svg>
+    </div>
+  </body>
+</html>
