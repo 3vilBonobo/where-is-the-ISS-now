@@ -26,7 +26,7 @@ const btn = document.querySelector('.btn');
 btn.addEventListener('click', () => getData());
 
 /* ---- Map configuration ---- */
-const map = L.map('map').setView([0, 30], 1);
+const map = L.map('map',{ scrollWheelZoom: false }).setView([0, 30], 1);
 const issIcon = L.icon({
   iconUrl: './assets/iss-transparent.png',
   shadowUrl: './assets/shadow-ISS.png',
